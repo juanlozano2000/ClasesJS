@@ -1,4 +1,4 @@
-// Le pido su nombre y apellido
+// Le pido su nombre
 let nombre = prompt("Escriba su nombre");
 
 // Le pido apellido
