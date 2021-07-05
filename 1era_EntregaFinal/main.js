@@ -26,17 +26,20 @@ const id = prompt("Que bebida desea levar? \n1)Vodka Smirnoff 750ml + 2jugos nar
 
 switch (id) {
     case "1":
-      cost = 400;
+      cost = 500;
+      bebida_nombre = "Vodka Smirnoff 750ml + 2jugos naranja Bagio 1L";
       break;
     case "2":
-      cost = 100;
+      cost = 1150;
+      bebida_nombre = "Vodka New Style x 1L caja de 6u";
       break;
     case "3":
-      cost = 1000;
+      cost = 350;
+      bebida_nombre = "Vodka Smirnoff diferentes saboresL";
       break;
-
     case "4":
-    cost = 1000;
+    cost = 1640;
+    bebida_nombre = "Vodka Absolut sabor Mandrin 750ml";
     break;
 
     default:
@@ -46,19 +49,12 @@ switch (id) {
 
 // // Que cantidad de lo elegido llevara?
 const cantidad = Number(prompt("Cuantas unidades desea llevar?"));
-
-
-
+let nombre = bebida_nombre;
 
 // Objetos --> productos de la seccion Vodkas. 
-// En donde dice 500 quiero cambiarlo por el COST, que a su vez depende de lo que elija en ID
-const producto1 = new Cart (id, cost ,cantidad);
-const producto2 = new Cart (id, cost ,cantidad);
-const producto3 = new Cart (id, cost ,cantidad);
-const producto4 = new Cart (id, cost ,cantidad);
+const producto1 = new Cart (nombre, cost ,cantidad);
+
 
 // Ejecuto objetos
 console.log(producto1.producto_id() + producto1.cost_x_cant());
-console.log(producto2.producto_id() + producto2.cost_x_cant());
-console.log(producto3.producto_id() + producto3.cost_x_cant());
-console.log(producto4.producto_id() + producto4.cost_x_cant());
+
