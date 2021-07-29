@@ -7,8 +7,8 @@ const itemsCarrito = document.querySelector(".box_carrito"); // Accedo a la caja
 const boton_añadir = document.querySelectorAll(".boton_añadir"); //boton para añadir
 const btn_carrito = document.querySelector(".btn_carrito"); // boton para que aparezca la opacidad
 const cantidad_num = document.querySelectorAll(".cantidad_num");//accedo a input de cantidad a llevar
-const llevar_mas = document.getElementById("mas");
-const llevar_menos = document.querySelectorAll(".menos");
+const llevar_mas = document.getElementById("mas"); //accedo a boton mas
+const llevar_menos = document.getElementById("menos"); //accedo a boton menos
 let unidades = 0;
 
 // ---------------------------FUNCIONES ----------------------------
@@ -57,21 +57,14 @@ function aparecer_todo() {
    document.getElementById("padre").classList.toggle("oculto");
 }
 
-// function sumar(e) {
-//     e.preventDefault;
-
-//     console.log(e.target);
-
-//     let mas = e.target.classList.contains("mas");
-//     if (mas) {
-//         unidades++;
-//         cantidad_num.setAttribute("value", unidades);
-//     }
-// }
-
 function sumar() {
     unidades++;
     document.getElementById("mas").value = unidades;
+}
+
+function restar() {
+    unidades--;
+    document.getElementById("menos").value = unidades;
 }
 
 // ---------------------------EVENTOS ----------------------------
@@ -82,13 +75,10 @@ boton_añadir.forEach(x => {
     console.log("HIzo click")
 });
 
-// boton_añadir.addEventListener("click", abrir_carrito);
-
 btn_carrito.addEventListener("click", aparecer_todo);
 
 llevar_mas.addEventListener("click", sumar);
-
-// llevar_mas.addEventListener("click", sumar);
+llevar_menos.addEventListener("click", restar);
 
 // ----------------------------LOGICA ---------------------------------
 
