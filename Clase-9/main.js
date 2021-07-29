@@ -7,9 +7,9 @@ const itemsCarrito = document.querySelector(".box_carrito"); // Accedo a la caja
 const boton_añadir = document.querySelectorAll(".boton_añadir"); //boton para añadir
 const btn_carrito = document.querySelector(".btn_carrito"); // boton para que aparezca la opacidad
 const cantidad_num = document.querySelectorAll(".cantidad_num");//accedo a input de cantidad a llevar
-const llevar_mas = document.querySelectorAll(".mas");
+const llevar_mas = document.getElementById("mas");
 const llevar_menos = document.querySelectorAll(".menos");
-let unidades = 1;
+let unidades = 0;
 
 // ---------------------------FUNCIONES ----------------------------
 
@@ -57,16 +57,21 @@ function aparecer_todo() {
    document.getElementById("padre").classList.toggle("oculto");
 }
 
-function sumar(e) {
-    e.preventDefault;
+// function sumar(e) {
+//     e.preventDefault;
 
-    console.log(e.target);
+//     console.log(e.target);
 
-    let mas = e.target.classList.contains("mas");
-    if (mas) {
-        unidades++;
-        cantidad_num.setAttribute("value", unidades);
-    }
+//     let mas = e.target.classList.contains("mas");
+//     if (mas) {
+//         unidades++;
+//         cantidad_num.setAttribute("value", unidades);
+//     }
+// }
+
+function sumar() {
+    unidades++;
+    document.getElementById("mas").value = unidades;
 }
 
 // ---------------------------EVENTOS ----------------------------
@@ -74,13 +79,14 @@ function sumar(e) {
 // Osea para poder clickear todos los añadir carritos y que se sumen
 boton_añadir.forEach(x => {
     x.addEventListener("click", abrir_carrito);
+    console.log("HIzo click")
 });
+
+// boton_añadir.addEventListener("click", abrir_carrito);
 
 btn_carrito.addEventListener("click", aparecer_todo);
 
-llevar_mas.forEach(mas => {
-    mas.addEventListener("click", sumar)
-});
+llevar_mas.addEventListener("click", sumar);
 
 // llevar_mas.addEventListener("click", sumar);
 

@@ -1,0 +1,12 @@
+.oculto{
+    display: none;
+}
+
+.tarjeta {
+    background-color: lightgrey;
+}
+
+.darkMode {
+    background-color: #333;
+    filter: invert(100%);
+}
