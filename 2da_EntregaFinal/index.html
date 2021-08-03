@@ -11,9 +11,6 @@
     <title>Carrito de compras | La Godd Licoreria</title>
 </head>
 <body class="container-fluid">
-    <div class=" row text-center h1_carrito">
-        <h1>Carrito de compras</h1>
-    </div>
     <!-- Header superior -->
     <div class="row">
         <!-- Logo y titulo -->
@@ -80,14 +77,54 @@
         </div>
     </header>
 
+
     <!-- Section -->
     <div class="row">
         <div class="col-md-12 cervezas-conteiner">
             <section>
                 <h3>CERVEZAS</h3>
                 <div class="cervezas-cajas">
-                    <div class="row" id="padre_cervezas">
-                        <!-- aca agregue todos mis productos con JS -->
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-3 cervezas-centrado">
+                            <div class="card text-center cervezas-cajas__box1">
+                                <div class="card-body caja_padre">
+                                    <img src="./img/patagonia_amber_lager.png" class="card-img-top img1" alt="patagonia-amber-lager.jpg">
+                                    <h5 class="card-title cervezas-cajas__box1--producto1C precio">$950</h5>
+                                    <p class="card-text cervezas-cajas__box1--promo-1 descripcion">CERVEZA PATAGONIA AMBER LAGER 473ml X6</p>
+                                    <a href="#" class="btn violeta rounded-pill boton_aniadir">Añadir al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 cervezas-centrado">
+                            <div class="card text-center cervezas-cajas__box1">
+                                <div class="card-body caja_padre">
+                                    <img src="./img/quilmes_negra.png" class="card-img-top img1" alt="quilmes_negra.jpg">
+                                    <h5 class="card-title cervezas-cajas__box1--producto1C precio">$590</h5>
+                                    <p class="card-text cervezas-cajas__box1--promo-1 descripcion">CERVEZA QUILMES STOUT NEGRA LATA 473 ml 6u</p>
+                                    <a href="#" class="btn violeta rounded-pill boton_aniadir">Añadir al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 cervezas-centrado">
+                            <div class="card text-center cervezas-cajas__box1">
+                                <div class="card-body caja_padre">
+                                    <img src="./img/pack-cerveza.png" class="card-img-top img1" alt="pack-cerveza.jpg">
+                                    <h5 class="card-title cervezas-cajas__box1--producto1C precio">$200</h5>
+                                    <p class="card-text cervezas-cajas__box1--promo-1 descripcion">SIX PACK SCHNEIDER RUBIA LAGER PROMO 6 LATAS 473ml</p>
+                                    <a href="#" class="btn violeta rounded-pill boton_aniadir">Añadir al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 cervezas-centrado">
+                            <div class="card text-center cervezas-cajas__box1">
+                                <div class="card-body caja_padre">
+                                    <img src="./img/cooler-10cervezas.png" class="card-img-top img1" alt="cooler-10cervezas-200px.jpg">
+                                    <h5 class="card-title cervezas-cajas__box1--producto1C precio">$5000</h5>
+                                    <p class="card-text cervezas-cajas__box1--promo-1 descripcion">CONSERVADORA CORONA + 10 CERVEZAS DE <strong>REGALO</strong></p>
+                                    <a href="#" class="btn violeta rounded-pill boton_aniadir">Añadir al carrito</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -95,43 +132,48 @@
     </div>
 
     <!-- Carrito de compras -->
-    <div class="d-flex row" id="padre">
-        <div class="col-md-7 box_opacidad">
-            <img id="cerrar" src="./img/Cerrar.png" alt="cerrar.png">
-        </div>
+    <section class="shopping-cart">
+        <div class="container">
+            <h1 class="text-center">Carrito de compras</h1> <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6>Producto</h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate">Precio</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6>Cantidad</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ? Aca van a aparecer los prodcutos -->
+            <div class="shopping-cart-items container_carrito">
 
-        <div class="col-md-5 carrito">
-            <!-- Titulos de mi -->
-            <div class="d-flex justify-content-around">
-                <h2>Resumen de compra: </h2>
-                <p class="subtotal">Subtotal</p>
             </div>
 
-            <div class="box_carrito">
-                <!-- Cada producto -->
-                <div class="producto_sumado d-flex align-items-center my-2">
-                    <!-- ESTO LO TIENE QUE INVENTAR SOLO---------------------------------------- -->
-                    <img src="./img/Grupo 177.png" alt="producto.jpg">
-                    <p class="descripcion">Vodka Smirnoff 750ml + 2jugos naranja Bagio 1L</p>
-                    <!-- Escribir el numero que desee llevar y tamb regular para sacar o meter mas -->
-                    <div class="entradas">
-                        <input class="cantidad_num" type="text" value="">
-                        <button class="mas" id="mas"> + </button>
-                        <button class="menos" id="menos"> - </button>
+            <!-- START TOTAL OJITO FIJARSE -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 total_num">$0</p>
                     </div>
-                    <!-- Subtotal -->
-                    <p class="precio">$1200</p>
-                    <!-- Eliminar -->
-                    <img class="tacho" src="./img/garbage.png" alt="">
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
 
 
-    <script src="./assets/js/main.js"></script>
+
+    <script src="./assets/js/app.js"></script>
     <!-- Link de JS bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 

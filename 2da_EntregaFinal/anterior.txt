@@ -1,0 +1,49 @@
+    <!-- Section -->
+    <div class="row">
+        <div class="col-md-12 cervezas-conteiner">
+            <section>
+                <h3>CERVEZAS</h3>
+                <div class="cervezas-cajas">
+                    <div class="row" id="padre_cervezas">
+                        <!-- aca agregue todos mis productos con JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Carrito de compras -->
+    <div class="d-flex row oculto" id="padre">
+        <div class="col-md-7 box_opacidad">
+            <img id="cerrar" src="./img/Cerrar.png" alt="cerrar.png">
+        </div>
+
+        <div class="col-md-5 carrito">
+            <!-- Titulos de mi -->
+            <div class="d-flex justify-content-around">
+                <h2>Resumen de compra: </h2>
+                <p class="subtotal">Subtotal</p>
+            </div>
+
+            <div class="box_carrito">
+                <!-- Cada producto -->
+                <div class="producto_sumado d-flex align-items-center my-2">
+                    <!-- ESTO LO TIENE QUE INVENTAR SOLO---------------------------------------- -->
+                    <img src="./img/Grupo 177.png" alt="producto.jpg">
+                    <p class="descripcion">Vodka Smirnoff 750ml + 2jugos naranja Bagio 1L</p>
+                    <!-- Escribir el numero que desee llevar y tamb regular para sacar o meter mas -->
+                    <div class="entradas">
+                        <input class="cantidad_num" type="text" value="">
+                        <button class="mas" id="mas"> + </button>
+                        <button class="menos" id="menos"> - </button>
+                    </div>
+                    <!-- Subtotal -->
+                    <p class="precio">$1200</p>
+                    <!-- Eliminar -->
+                    <img class="tacho" src="./img/garbage.png" alt="">
+                </div>
+                <p class="text-right">Total: <span id="total"></span></p>
+            </div>
+        </div>
+    </div>

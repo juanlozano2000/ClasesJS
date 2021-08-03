@@ -13,14 +13,16 @@ class Producto{
 // ----------------------------VARIABLES---------------------------
 
 const itemsCarrito = document.querySelector(".box_carrito"); // Accedo a la caja padre del carrito
-const boton_añadir = document.querySelectorAll(".boton_añadir"); //boton para añadir
+const boton_aniadir = document.querySelectorAll(".boton_añadir"); //boton para añadir
 const btn_carrito = document.querySelector(".btn_carrito"); // boton para que aparezca la opacidad
 const cantidad_num = document.querySelectorAll(".cantidad_num");//accedo a input de cantidad a llevar
 const llevar_mas = document.getElementById("mas"); //accedo a boton mas
 const llevar_menos = document.getElementById("menos"); //accedo a boton menos
 const cerrar = document.getElementById("cerrar");
+const DOMtotal = document.getElementById('#total');
 const padre_cervezas = document.getElementById("padre_cervezas");
 let unidades = 1;
+let total = 0;
 // Array
 const array_carrito = [];
 
@@ -78,6 +80,9 @@ function productos_pagina() {
 }
 
 function abrir_carrito () {
+    // Vacio el carrito
+    itemsCarrito.textContent = '';
+
     base_de_datos.forEach(items => {
         let producto_sumado = document.createElement("div");
         producto_sumado.setAttribute("class", "producto_sumado d-flex align-items-center my-2");
@@ -86,13 +91,13 @@ function abrir_carrito () {
             // Creo el item imagen del carrito
             let img = document.createElement("img");
             img.setAttribute("class", "item_img");
-            img.setAttribute("src", "./img/Grupo 177.png");
+            img.setAttribute("src", items.img);
             producto_sumado.appendChild(img);
     
             // Creo el item parrafo del carrito
             let parrafo = document.createElement("p");
             parrafo.setAttribute("class","descripcion");
-            parrafo.textContent = "Lorem ipsum dolor sit, amet consectetur adipisicing."
+            parrafo.textContent = items.nombre;
             producto_sumado.appendChild(parrafo);
     
                 let entradas = document.createElement("div");
@@ -119,16 +124,76 @@ function abrir_carrito () {
             // Creo el item precio <p> del carrito
             let precio = document.createElement("p");
             precio.setAttribute("class","precio");
-            precio.textContent = "$xxx";
+            precio.textContent = items.precio;
             producto_sumado.appendChild(precio);
     
             // Creo el item el tacho basura para eliminar del carrito
             let tacho = document.createElement("img");
             tacho.setAttribute("class", "tacho");
             tacho.setAttribute("src", "./img/garbage.png");
+            tacho.setAttribute("tacho", items.id); //para que cada boton de cada producto tenga un ID
             producto_sumado.appendChild(tacho);
 
     })
+
+
+}
+
+function abrir_carrito2 () {
+    // Vacio el carrito
+    itemsCarrito.textContent = '';
+
+        let producto_sumado = document.createElement("div");
+        producto_sumado.setAttribute("class", "producto_sumado d-flex align-items-center my-2");
+        itemsCarrito.appendChild(producto_sumado);
+        
+            // Creo el item imagen del carrito
+            let img = document.createElement("img");
+            img.setAttribute("class", "item_img");
+            img.setAttribute("src", items.img);
+            producto_sumado.appendChild(img);
+    
+            // Creo el item parrafo del carrito
+            let parrafo = document.createElement("p");
+            parrafo.setAttribute("class","descripcion");
+            parrafo.textContent = items.nombre;
+            producto_sumado.appendChild(parrafo);
+    
+                let entradas = document.createElement("div");
+                entradas.setAttribute("class", "entradas");
+                producto_sumado.appendChild(entradas);
+    
+                // Creo el item input del carrito ara poner manual lo que voy al llevar
+                let input = document.createElement("input");
+                input.setAttribute("class", "cantidad_num");
+                entradas.appendChild(input);
+    
+                // Creo el item boton + del carrito
+                let btn_mas = document.createElement("button");
+                btn_mas.setAttribute("class", "mas");
+                btn_mas.textContent = "+";
+                entradas.appendChild(btn_mas);
+    
+                // Creo el item boton - del carrito
+                let btn_menos = document.createElement("button");
+                btn_menos.setAttribute("class", "menos");
+                btn_menos.textContent = "-";
+                entradas.appendChild(btn_menos);
+    
+            // Creo el item precio <p> del carrito
+            let precio = document.createElement("p");
+            precio.setAttribute("class","precio");
+            precio.textContent = items.precio;
+            producto_sumado.appendChild(precio);
+    
+            // Creo el item el tacho basura para eliminar del carrito
+            let tacho = document.createElement("img");
+            tacho.setAttribute("class", "tacho");
+            tacho.setAttribute("src", "./img/garbage.png");
+            tacho.setAttribute("tacho", items.id); //para que cada boton de cada producto tenga un ID
+            producto_sumado.appendChild(tacho);
+
+    
 
 
 }
@@ -167,16 +232,42 @@ function añadir_al_array(e) {
        return array_carrito.indexOf(item) === index;
     })
 
-    console.log(resultado_array);
+    // console.log(resultado_array);
+
+    abrir_carrito();
+}
+
+// Calcular el total a llevar
+function calcular_total() {
+    // Limpio el precio anterior
+    total = 0;
+
+    //recorro el array_carrito
+    array_carrito.forEach(item => {
+        // Filtro el id con su precio propio de la base de datos
+        const miItem = base_de_datos.filter((items_bdd) => {
+            return items_bdd.id === parseInt(item);
+        });
+
+        total = total + miItem[0].precio;
+    });
+
+    // Renderizamos el precio en el HTML
+    DOMtotal.textContent = total.toFixed(2);
+    
 }
 
 // ---------------------------EVENTOS ----------------------------
 
-// Osea para poder clickear todos los añadir carritos y que se sumen
-boton_añadir.forEach(x => {
-    x.addEventListener("click", abrir_carrito);
-    console.log("HIzo click")
+// Osea para poder clickear todos los añadir carritos y que se sumen. NI siquiera me funciona.
+boton_aniadir.forEach(x => {
+    x.addEventListener("click", abrir_carrito2);
 });
+
+// boton_añadir.addEventListener("click", abrir_carrito);
+
+
+
 
 cerrar.addEventListener("click", cerrar_carrito);
 
