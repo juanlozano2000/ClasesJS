@@ -212,16 +212,12 @@ function restar() {
     document.getElementById("menos").value = unidades;
 }
 
+// Todavia no funciona porque lo quiero hacer con position y todo eso. En un futuro
 function cerrar_carrito() {
     document.getElementById("padre").classList.toggle("oculto");
 }
-// function ver(e) {
-//     console.log(e.target);
-// }
 
 // Es para crear los productos de mi pagina y que cada uno contenga sus datos
-
-
 function añadir_al_array(e) {
     array_carrito.push(e.target.getAttribute("marcador"));
 
