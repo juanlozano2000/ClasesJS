@@ -137,14 +137,25 @@ function cambiar_cantidad(e) {
    actualizar_total();
 }
 
-
+const body = document.querySelector('body');
 const btn_modo_oscuro = document.getElementById('modo_oscuro'); //acceso a boton modo oscuro
-btn_modo_oscuro.addEventListener('click', cambiarTema)
+const btn_modo_light = document.getElementById('modo_light'); //acceso a boton modo oscuro
+btn_modo_oscuro.addEventListener('click', cambiar_a_oscuro);
+btn_modo_light.addEventListener('click', cambiar_a_light);
 
-function cambiarTema() {
-   const body = document.body.classList.toggle('oscuro');
+function cambiar_a_oscuro() {
+    body.classList.add('oscuro');
+    body.classList.remove('light');
+    localStorage.setItem('fondo', 'oscuro');
+}
+function cambiar_a_light() {
+    body.classList.remove('oscuro');
+    body.classList.add('light');
+    localStorage.setItem('fondo', 'light');
+}
 
-    localStorage.setItem('dark_mode', body);
-    localStorage.getItem('dark_mode');
-
+if (localStorage.getItem('fondo') == null) {
+    body.className= 'light';
+} else {
+    body.className = localStorage.getItem('fondo');
 };

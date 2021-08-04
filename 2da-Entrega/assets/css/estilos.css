@@ -1,7 +1,8 @@
 .bordes {
   border: solid 1px red; }
 
-#modo_oscuro {
+#modo_oscuro, #modo_light {
+  margin: 2px;
   background-color: #eee;
   border-radius: 15px;
   padding: 3px; }

@@ -11,7 +11,8 @@ $border-rojo: solid 1px red;
     border: $border-rojo;
 }
 
-#modo_oscuro{
+#modo_oscuro, #modo_light{
+  margin: 2px;
   background-color: #eee;
   border-radius: 15px;
   padding: 3px;
@@ -20,7 +21,7 @@ $border-rojo: solid 1px red;
 .oscuro{
   background-color: rgb(82, 36, 36);
   filter: invert(100%);
-}
+};
 
 // Estilos para carrito------------------------------------------------------------
 .bcg-blue{
