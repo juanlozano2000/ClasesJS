@@ -136,3 +136,15 @@ function cambiar_cantidad(e) {
 
    actualizar_total();
 }
+
+
+const btn_modo_oscuro = document.getElementById('modo_oscuro'); //acceso a boton modo oscuro
+btn_modo_oscuro.addEventListener('click', cambiarTema)
+
+function cambiarTema() {
+   const body = document.body.classList.toggle('oscuro');
+
+    localStorage.setItem('dark_mode', body);
+    localStorage.getItem('dark_mode');
+
+};

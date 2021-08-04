@@ -1,6 +1,15 @@
 .bordes {
   border: solid 1px red; }
 
+#modo_oscuro {
+  background-color: #eee;
+  border-radius: 15px;
+  padding: 3px; }
+
+.oscuro {
+  background-color: #522424;
+  filter: invert(100%); }
+
 .bcg-blue {
   background-color: blue; }
 
