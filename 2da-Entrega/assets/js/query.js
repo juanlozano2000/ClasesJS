@@ -15,9 +15,7 @@ let array_datos = [];
 let abuelo_datos = document.querySelector('#abuelo_datos');
 
 // Funcion tomar valores, guardarlos en un array y meterlos en el storage
-$('.btn_enviar').click(function (e) { 
-    e.preventDefault();
-    
+$('.btn_enviar').click(function () {
     // tomo los valores
     let nombre = $('.nombreInput').val();
     let apellido = $('.apellidoInput').val();
@@ -67,12 +65,11 @@ $('.btn_enviar').click(function (e) {
 });
 
 // Funcion pintar, osea traer del local y pintarlo en el html
-$('.btn_enviar').click(function () { 
-
+function pintarDatos() {
     let traer_storage = JSON.parse(localStorage.getItem('datos'));
 
     if (traer_storage != null) {      
-        traer_storage.forEach(item => {            
+        traer_storage.forEach((item) => {            
             
             $("#abuelo_datos").append(
         `
@@ -93,7 +90,8 @@ $('.btn_enviar').click(function () {
     } else {
         console.log('array sin nada');
     }
-});
+
+}
 
 
 // Funcion para eliminar el item. ACA ESTA TODO BIEN
@@ -101,8 +99,8 @@ function borrar_item(id) {
     let borrar = JSON.parse(localStorage.getItem('datos'));
     let actualizar = borrar.filter(item => item.id != id); //filtrame todo lo que sea distinto id, entonces me lo borra
     localStorage.setItem('datos', JSON.stringify(actualizar));
-    // location.reload();
+    location.reload();
 };
 
 
-
+pintarDatos();
