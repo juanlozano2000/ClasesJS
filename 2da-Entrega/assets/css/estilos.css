@@ -1,3 +1,10 @@
+.formulario {
+  background-color: #EFEAEA; }
+
+@media screen and (max-width: 567px) {
+  .apellido {
+    margin-top: 3px; } }
+
 .bordes {
   border: solid 1px red; }
 

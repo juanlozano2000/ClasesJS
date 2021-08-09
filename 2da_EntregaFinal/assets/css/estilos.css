@@ -7,50 +7,51 @@
 body {
   position: relative; }
 
-.oculto .box_opacidad {
-  background-color: #3F2B39;
-  opacity: 0.65;
-  position: relative; }
-  .oculto .box_opacidad #cerrar {
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    cursor: pointer; }
-
-.oculto .carrito {
-  background-color: #EFEAEA; }
-  .oculto .carrito h2 {
-    font-size: 20px; }
-  .oculto .carrito .subtotal {
-    font-size: 20px; }
-  .oculto .carrito .box_carrito .producto_sumado {
+.oculto {
+  display: none; }
+  .oculto .box_opacidad {
+    background-color: #3F2B39;
+    opacity: 0.65;
     position: relative; }
-    .oculto .carrito .box_carrito .producto_sumado .descripcion {
-      width: 30%;
-      padding: 5px;
-      margin-top: -40px;
-      font-size: 16px;
-      text-align: left; }
-    .oculto .carrito .box_carrito .producto_sumado .entradas {
+    .oculto .box_opacidad #cerrar {
       position: absolute;
-      top: 65%;
-      left: 33%; }
-      .oculto .carrito .box_carrito .producto_sumado .entradas .mas {
-        background-color: #404be7;
-        padding: 5px; }
-      .oculto .carrito .box_carrito .producto_sumado .entradas .menos {
-        background-color: #ee5050;
-        padding: 5px; }
-      .oculto .carrito .box_carrito .producto_sumado .entradas .cantidad_num {
-        width: 40px;
-        height: 40px;
-        text-align: center; }
-    .oculto .carrito .box_carrito .producto_sumado .precio {
-      font-size: 30px;
-      margin-left: 13%; }
-  .oculto .carrito .box_carrito .tacho {
-    margin-left: 20px;
-    margin-bottom: 10px; }
+      top: 30px;
+      left: 20px;
+      cursor: pointer; }
+  .oculto .carrito {
+    background-color: #EFEAEA; }
+    .oculto .carrito h2 {
+      font-size: 20px; }
+    .oculto .carrito .subtotal {
+      font-size: 20px; }
+    .oculto .carrito .box_carrito .producto_sumado {
+      position: relative; }
+      .oculto .carrito .box_carrito .producto_sumado .descripcion {
+        width: 30%;
+        padding: 5px;
+        margin-top: -40px;
+        font-size: 16px;
+        text-align: left; }
+      .oculto .carrito .box_carrito .producto_sumado .entradas {
+        position: absolute;
+        top: 65%;
+        left: 33%; }
+        .oculto .carrito .box_carrito .producto_sumado .entradas .mas {
+          background-color: #404be7;
+          padding: 5px; }
+        .oculto .carrito .box_carrito .producto_sumado .entradas .menos {
+          background-color: #ee5050;
+          padding: 5px; }
+        .oculto .carrito .box_carrito .producto_sumado .entradas .cantidad_num {
+          width: 40px;
+          height: 40px;
+          text-align: center; }
+      .oculto .carrito .box_carrito .producto_sumado .precio {
+        font-size: 30px;
+        margin-left: 13%; }
+    .oculto .carrito .box_carrito .tacho {
+      margin-left: 20px;
+      margin-bottom: 10px; }
 
 .h1_carrito {
   background-color: #EFEAEA; }

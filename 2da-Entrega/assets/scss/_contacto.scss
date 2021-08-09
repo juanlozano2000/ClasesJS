@@ -1,0 +1,13 @@
+$bcg-grisFondo: #EFEAEA;
+
+.formulario{
+    background-color: $bcg-grisFondo;
+}
+
+
+@media screen and (max-width: 567px){
+    // Input apellido
+    .apellido{
+        margin-top: 3px;
+    }
+}

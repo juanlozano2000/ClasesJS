@@ -7,7 +7,164 @@
     <title>Jq practica</title>
 </head>
 <body>
-
+        <!-- Header superior -->
+        <div class="row">
+            <!-- Logo y titulo -->
+            <div class="col-md-3 logo">
+                <img src="" alt="">
+                <a href="../index.html" class="link-inicio">
+                    <div class="logo__h">
+                        <h1>Cerveza</h1>
+                        <h2 class="sub_h2">ALMACEN DE BEBIDAS</h2>
+                    </div>
+                </a>
+            </div>
+    
+            <!-- Buscador -->
+            <div class="col-md-7 buscador">
+                <input type="search" name="" id="barraBuscadora" placeholder="¿Que estas buscando?">
+            </div>
+    
+            <div class="col-lg-2 col-md-2 botones">
+                <!-- Icono carrito -->
+                <button id="modo_oscuro">Modo oscuro</button>
+                <button id="modo_light">Modo light</button>
+            </div> 
+        </div>
+        
+        <!-- Header inferior-->
+        <header>
+            <div class="row">
+                <!-- MENU y combinacion de logo -->
+                <div class="col-md-12 menu">
+                    <nav class="navbar navbar-expand-lg menu">
+                        <div class="container-fluid">
+        
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span><img class="icono_menu" src="./img/lista.svg" alt="icono-responsive.png"></span>
+                            </button>
+        
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 barraSupConteiner justify-content-around w-100">
+                                    <li class="nav-item">
+                                        <a class="nav-link active barraSuperior" aria-current="page" href="../index.html">INICIO</a>
+                                    </li>
+        
+                                    <li class="nav-item">
+                                        <a class="nav-link barraSuperior"  href="../views/packs.html">PACKS</a>
+                                    </li>
+        
+                                    <li class="nav-item">
+                                        <a class="nav-link barraSuperior" href="../views/ofertas.html">OFERTAS</a>
+                                    </li>
+        
+                                    <li class="nav-item">
+                                        <a class="nav-link barraSuperior" href="../views/zonas_envio.html">ZONAS DE ENVIO</a>
+                                    </li>
+        
+                                    <li class="nav-item">
+                                        <a class="nav-link barraSuperior"  href="../views/contacto.html">CONTACTO</a>
+                                    </li>
+                                </ul>
+        
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    
+    
+        <!-- Section -->
+        <div class="row">
+            <div class="col-md-12 cervezas-conteiner">
+                <section>
+                    <h3>CERVEZAS</h3>
+                    <div class="cervezas-cajas">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-3 cervezas-centrado">
+                                <div class="card text-center cervezas-cajas__box1">
+                                    <div class="card-body caja_padre">
+                                        <img src="./img/patagonia_amber_lager.png" class="card-img-top img1" alt="patagonia-amber-lager.jpg">
+                                        <h5 class="card-title cervezas-cajas__box1--producto1C precio">$950</h5>
+                                        <p class="card-text cervezas-cajas__box1--promo-1 descripcion">CERVEZA PATAGONIA AMBER LAGER 473ml X6</p>
+                                        <a href="#" class="btn violeta rounded-pill boton_aniadir">Añadir al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 cervezas-centrado">
+                                <div class="card text-center cervezas-cajas__box1">
+                                    <div class="card-body caja_padre">
+                                        <img src="./img/quilmes_negra.png" class="card-img-top img1" alt="quilmes_negra.jpg">
+                                        <h5 class="card-title cervezas-cajas__box1--producto1C precio">$590</h5>
+                                        <p class="card-text cervezas-cajas__box1--promo-1 descripcion">CERVEZA QUILMES STOUT NEGRA LATA 473 ml 6u</p>
+                                        <a href="#" class="btn violeta rounded-pill boton_aniadir">Añadir al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 cervezas-centrado">
+                                <div class="card text-center cervezas-cajas__box1">
+                                    <div class="card-body caja_padre">
+                                        <img src="./img/pack-cerveza.png" class="card-img-top img1" alt="pack-cerveza.jpg">
+                                        <h5 class="card-title cervezas-cajas__box1--producto1C precio">$200</h5>
+                                        <p class="card-text cervezas-cajas__box1--promo-1 descripcion">SIX PACK SCHNEIDER RUBIA LAGER PROMO 6 LATAS 473ml</p>
+                                        <a href="#" class="btn violeta rounded-pill boton_aniadir">Añadir al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 cervezas-centrado">
+                                <div class="card text-center cervezas-cajas__box1">
+                                    <div class="card-body caja_padre">
+                                        <img src="./img/cooler-10cervezas.png" class="card-img-top img1" alt="cooler-10cervezas-200px.jpg">
+                                        <h5 class="card-title cervezas-cajas__box1--producto1C precio">$5000</h5>
+                                        <p class="card-text cervezas-cajas__box1--promo-1 descripcion">CONSERVADORA CORONA + 10 CERVEZAS DE <strong>REGALO</strong></p>
+                                        <a href="#" class="btn violeta rounded-pill boton_aniadir">Añadir al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    
+        <!-- Carrito de compras -->
+        <section class="shopping-cart">
+            <div class="container">
+                <h1 class="text-center">Carrito de compras</h1> <hr>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="shopping-cart-header">
+                            <h6>Producto</h6>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="shopping-cart-header">
+                            <h6 class="text-truncate">Precio</h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="shopping-cart-header">
+                            <h6>Cantidad</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- ? Aca van a aparecer los prodcutos -->
+                <div class="shopping-cart-items container_carrito">
+    
+                </div>
+    
+                <!-- TOTAL -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="shopping-cart-total d-flex align-items-center">
+                            <p class="mb-0">Total</p>
+                            <p class="ml-4 mb-0 total_num">$0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
