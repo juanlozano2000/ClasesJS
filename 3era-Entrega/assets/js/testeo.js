@@ -1,10 +1,11 @@
 // ----------------------------ENTIDADES---------------------------
 class Producto {
-    constructor(id, nombre, precio, img) {
+    constructor(id, nombre, precio, img, cantidad) {
       this.id = id;
       this.nombre = nombre;
       this.precio = precio;
       this.img = img;
+      this.cantidad = cantidad;
     }
   };
 
@@ -29,25 +30,29 @@ let total = 0;
     0,
     "CERVEZA PATAGONIA AMBER LAGER 473ml X6",
     950,
-    "./img/patagonia_amber_lager.png"
+    "./img/patagonia_amber_lager.png",
+    1
   );
   const cerveza_dos = new Producto(
     1,
     "CERVEZA QUILMES STOUT NEGRA LATA 473 ml 6u",
     590,
-    "./img/quilmes_negra.png"
+    "./img/quilmes_negra.png",
+    1
   );
   const cerveza_tres = new Producto(
     2,
     "SIX PACK SCHNEIDER RUBIA LAGER PROMO 6 LATAS 473ml",
     200,
-    "./img/pack-cerveza.png"
+    "./img/pack-cerveza.png",
+    1
   );
   const cerveza_cuatro = new Producto(
     3,
     "CONSERVADORA CORONA + 10 CERVEZAS DE REGALO",
     5000,
-    "./img/cooler-10cervezas.png"
+    "./img/cooler-10cervezas.png",
+    1
   );
   
   const base_de_datos = [cerveza_uno, cerveza_dos, cerveza_tres, cerveza_cuatro];
@@ -137,35 +142,40 @@ function pintar_carrito() {
   let traer_local = JSON.parse(localStorage.getItem('carrito'));
   console.log(traer_local);
 
-  array_carrito.forEach(item => {
-    $(container).append(`
-    <div class="row shoppingCartItem">
-    <div class="col-6">
-        <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-            <img src=${item.img} class="shopping-cart-image" alt="cervezas.jpg">
-            <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">
-                ${item.nombre}
-            </h6>
-        </div>
-    </div>
-    <div class="col-2">
-        <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-            <p class="item-price mb-0 shoppingCartItemPrice">
-            $ ${item.precio}
-            </p>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-            <input type="number" value="1" class="shopping-cart-quantity-input shoppingCartItemQuantitye">
-            <button type="button" class="btn btn-danger buttonDelete" onclick="borrar_item(${item.id})">x</button>
-        </div>
-    </div>
-   </div>
-   
-    `);
-    
-  });
+  if (traer_local == null) {
+    console.log('el array esta vacio, no puedo traer nada');
+  } else {
+    traer_local.forEach(item => {
+      $(container).append(`
+      <div class="row shoppingCartItem">
+      <div class="col-6">
+          <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+              <img src=${item.img} class="shopping-cart-image" alt="cervezas.jpg">
+              <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">
+                  ${item.nombre}
+              </h6>
+          </div>
+      </div>
+      <div class="col-2">
+          <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+              <p class="item-price mb-0 shoppingCartItemPrice">
+              $ ${item.precio}
+              </p>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+              <input type="number" value=${item.cantidad} class="shopping-cart-quantity-input shoppingCartItemQuantitye">
+              <button type="button" class="btn btn-danger buttonDelete" onclick="eliminar_producto(${item.id})">x</button>
+          </div>
+      </div>
+     </div>
+     
+      `);
+      
+    });
+  }
+
 
 
 }
@@ -176,7 +186,7 @@ function guardar_local() {
 }
 
 // Para eliminar producto
-function eliminar_producto() {
+function eliminar_producto(id) {
   
 }
 
@@ -184,8 +194,9 @@ function eliminar_producto() {
 function cambiar_cantidad() {
   
 }
-// ---------------------------EVENTOS -----------------------------
 
+
+// ---------------------------EVENTOS -----------------------------
 
 
 // ----------------------------LOGICA -----------------------------
