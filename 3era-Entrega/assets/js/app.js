@@ -104,7 +104,7 @@ function actualizar_total() {
 
         shoppingCartItem.forEach(item => {
            const elemento_producto = item.querySelector(".shoppingCartItemPrice");  
-           const shoppingCartItemPrice = Number(elemento_producto.textContent.replace('$', '')); //para que solo me muestre el numero en si y que me cambie el $ por un espacio vacio asi pedo jugar bien con los numeros
+           const shoppingCartItemPrice = Number(elemento_producto.textContent.replace('$', '')); //para que solo me muestre el numero en si y que me cambie el $ por un espacio vacio asi puedo jugar bien con los numeros
            const elemento_cantidad = Number(item.querySelector(".shoppingCartItemQuantity").value); //accedo al atributo value del input
 
            total = total + shoppingCartItemPrice * elemento_cantidad; //el total va a ser igual a lo que ya tenia el total mas la multicplicacion de las unidades por el precio
@@ -136,6 +136,8 @@ function cambiar_cantidad(e) {
 
    actualizar_total();
 }
+
+
 
 const body = document.querySelector('body');
 const btn_modo_oscuro = document.getElementById('modo_oscuro'); //acceso a boton modo oscuro

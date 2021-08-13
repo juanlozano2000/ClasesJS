@@ -97,7 +97,7 @@ function pintarDatos() {
 // Funcion para eliminar el item. ACA ESTA TODO BIEN
 function borrar_item(id) {
     let borrar = JSON.parse(localStorage.getItem('datos'));
-    let actualizar = borrar.filter(item => item.id != id); //filtrame todo lo que sea distinto id, entonces me lo borra
+    let actualizar = borrar.filter(item => item.id != id); //filtrame el ID del local y si es distinto al id(numero del onclick), filtramelo
     localStorage.setItem('datos', JSON.stringify(actualizar));
     location.reload();
 };
