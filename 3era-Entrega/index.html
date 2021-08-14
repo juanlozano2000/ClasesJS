@@ -16,7 +16,7 @@
         <!-- Logo y titulo -->
         <div class="col-md-3 logo">
             <img src="" alt="">
-            <a href="../index.html" class="link-inicio">
+            <a href="./index.html" class="link-inicio">
                 <div class="logo__h">
                     <h1>Cerveza</h1>
                     <h2 class="sub_h2">ALMACEN DE BEBIDAS</h2>
@@ -51,21 +51,8 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 barraSupConteiner justify-content-around w-100">
                                 <li class="nav-item">
-                                    <a class="nav-link active barraSuperior" aria-current="page" href="../index.html">INICIO</a>
+                                    <a class="nav-link active barraSuperior" aria-current="page" href="./index.html">INICIO</a>
                                 </li>
-    
-                                <li class="nav-item">
-                                    <a class="nav-link barraSuperior"  href="../views/packs.html">PACKS</a>
-                                </li>
-    
-                                <li class="nav-item">
-                                    <a class="nav-link barraSuperior" href="../views/ofertas.html">OFERTAS</a>
-                                </li>
-    
-                                <li class="nav-item">
-                                    <a class="nav-link barraSuperior" href="../views/zonas_envio.html">ZONAS DE ENVIO</a>
-                                </li>
-    
                                 <li class="nav-item">
                                     <a class="nav-link barraSuperior"  href="./contacto.html">CONTACTO</a>
                                 </li>
@@ -87,7 +74,7 @@
                 <div class="cervezas-cajas">
                     <div class="row" id="padre_cervezas">
                         <!-- aca se pintan las cosas -->
-                        
+
 <!--                         <div class="col-12 col-md-6 col-lg-3 cervezas-centrado">
                             <div class="card text-center cervezas-cajas__box1">
                                 <div class="card-body caja_padre">
@@ -167,7 +154,21 @@
                         <p class="mb-0">Total</p>
                         <p class="ml-4 mb-0 total_num">$<span id="total">0</span></p>
                     </div>
+                    <!-- Total en USD -->
+                    <div id="dolar">
+                        <p class="mb-0">Total en USD</p>
+                        <p class="ml-4 mb-0 total_USD">$<span id="total_USD">0</span></p>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Boton comprar -->
+        <div class="row">
+            <div class="col-12">
+                <a href="./comprar.html" class="d-flex justify-content-center text-decoration-none">
+                    <button id="btn_comprar" class="w-50 btn btn-success mb-4">COMPRAR</button>
+                </a>
             </div>
         </div>
     </section>
@@ -179,6 +180,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- <script src="./assets/js/app.js"></script> -->
     <script src="./assets/js/testeo.js"></script>
+    <script src="./assets/js/modoOscuro.js"></script>
+    <script src="./assets/js/dolar.js"></script>
     <!-- <script src="./assets/js/main.js"></script> -->
     <!-- Link de JS bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

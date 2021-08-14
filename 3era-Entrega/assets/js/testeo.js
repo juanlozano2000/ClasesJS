@@ -113,10 +113,14 @@ function añadir_al_array(e) {
 function pintar_carrito() {
   let traer_local = JSON.parse(localStorage.getItem('carrito'));
 
-  if (traer_local == null) {
+  // Eliminar duplicados
+  let mySet = new Set(traer_local.map(JSON.stringify));
+  let sinDuplicados = Array.from(mySet).map(JSON.parse);
+
+  if (sinDuplicados == null) {
     console.log('el array esta vacio, no puedo traer nada');
   } else {
-    traer_local.forEach(item => {
+    sinDuplicados.forEach(item => {
       $(container).append(`
       <div class="row shoppingCartItem">
       <div class="col-6">
@@ -143,13 +147,13 @@ function pintar_carrito() {
      </div>
      
       `);
-      
     });
-  
   }
 
+  // Todas las veces que se repita mi producto en el localStorage que sea = a value del input.
+  // O que, SI ya toco el boton con marcador x, que le sale una alerta de que su producto ya fue añadido en su momento, por favor modifique cantidad. 
+
   refresh_total();
-  
 }
 
 // Guardar en Local
@@ -196,6 +200,31 @@ function refresh_total() {
   });
 
   DOMtotal.textContent = `${total}`;
+
+  // Total en USD
+  api();
+}
+
+// API total dolar blue
+function api() {
+  const URL = 'https://api.bluelytics.com.ar/v2/latest';
+  $.getJSON(URL, function (res, state) {
+          if (state === 'success') {
+              // Guardo el valor de dolar blue
+              let dolarBlue = res.blue.value_sell;
+
+              // Accedo a mi total pesos
+              let total_pesos = Number(document.getElementById('total').textContent);
+
+              // Accedo a mi USD
+              let total_USD = document.getElementById('total_USD');
+              // Hago el resultado
+              let resultado = (total_pesos/dolarBlue).toFixed(2);
+              // Lo pinto
+              total_USD.textContent = resultado;
+          }
+      }
+  );
 }
 
 // ----------------------------LOGICA -----------------------------
